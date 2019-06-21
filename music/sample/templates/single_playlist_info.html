@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    {% include 'nav.html' %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>single_playlist_info</title>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}Code/css/single_playlist_info.css" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.8.2/css/all.css" type="text/css" />
+    <script type="text/javascript">
+        songs_result = JSON.parse('{{ songs_result }}'.replace(/&#39;/g, '"'));
+        playlists_result = JSON.parse('{{ playlists_result }}'.replace(/&#39;/g, '"'))[0];
+        // console.log(playlists_result);
+    </script>
+    <script src="{{ STATIC_URL }}Code/js/single_playlist_info.js"></script> 
+</head>
+<body>
+
+    <div id="shadow">  
+    </div>  
+    <div class="add_toMylist">
+        <div class="words">
+        <span>添加到我的歌单</span>
+            <span class="close"> <i class="fa fa-times" aria-hidden="true"></i></span>
+        </div>
+    </div> 
+    <div class="container">
+        <div class="header">
+            <!-- <div class="header_left">
+                <img src="../images/guangnian.jpg">
+            </div>
+            <div class="header_right">
+                <div class="row1">
+                    <span class="playlist_box">
+                        歌单
+                    </span>
+                    <span class="playlist_name">我喜欢的音乐</span>
+                </div>
+                <div class="row2">
+                    <span class="creater_name">creater_name</span>
+                    <span class="created_time">created_time创建</span>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="songList">
+            <table>
+                <caption>歌曲列表</caption>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>操作</th>
+                        <th class="songList_header_name">歌曲</th>
+                        <th class="songList_header_author">歌手</th>
+                        <th class="songList_header_time">时长</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="songList_body">
+                    <!-- <tr>
+                        <th>1</th>
+                        <th>播放</th>
+                        <th>光年之外</th>
+                        <th>邓紫棋</th>
+                        <th>04:02</th>
+                        <th>收藏</th>
+                        <th>移除</th>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <th>播放</th>
+                        <th>光年之外</th>
+                        <th>邓紫棋</th>
+                        <th>04:02</th>
+                        <th>收藏</th>
+                        <th>移除</th>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="{{ STATIC_URL }}Code/js/single_playlist_info.js"></script>
+</html>

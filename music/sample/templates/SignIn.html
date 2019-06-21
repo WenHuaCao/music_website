@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sing In</title>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}Code/css/font-awesome.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}Code/css/SignIn.css"/>
+    <script type="text/javascript">
+        var alertBool = '{{ alertBool }}';
+        if(alertBool == '1') {
+            alert('用户名不能为空！');
+        }
+        else if(alertBool == '2') {
+            alert('密码不能空！');
+        }
+        else if(alertBool == '3') {
+            alert('用户不存在或密码不正确！');
+        }
+    </script>
+</head>
+
+<body>
+    <div id="main">
+        <div class="site_name"> 
+            <h1>悠闲听音乐系统</h1>
+            </div>
+        <div id="container">
+            
+            <div id="img">
+                <img src="/static/logo.jpg"/>
+            </div>
+            <form method="POST" action="">{% csrf_token %}
+            <div >
+                <i class="fa fa-user" ></i>
+                <input type="text" id="username" name = "username" placeholder="用户名"
+                       onfocus = "this.value ='';">
+            </div>
+            <div >
+                <i class="fa fa-key"></i>
+                <input type="password" id="password" name = "password" placeholder="密码"
+                       onfocus = "this.value ='';">
+            </div>
+            <div><input type="submit" id="button" value="登录" onclick=""></div>
+            
+            </form>
+            <a href="/register/">
+            <div><input type="submit" id="button" value="去注册" onclick=""></div></a>
+        </div>
+    </div>
+</body>
+</html>
